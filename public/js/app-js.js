@@ -1,8 +1,10 @@
 var taskInput=document.getElementById("new-task");//Add a new task.
-var addButton=document.getElementsByTagName("button")[0];//first button
+// var addButton=document.getElementById("new-task-button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
+incompleteTaskHolder={children:[]}
+completedTasksHolder={children:[]}
 //New task list item
 var createNewTaskElement=function(taskString){
 
@@ -115,9 +117,9 @@ var ajaxRequest=function(){
 
 
 //Set the click handler to the addTask function.
-addButton.onclick=addTask;
-addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
+// addButton.onclick=addTask;
+// addButton.addEventListener("click",addTask);
+// addButton.addEventListener("click",ajaxRequest);
 
 
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
