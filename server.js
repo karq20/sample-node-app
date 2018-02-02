@@ -6,9 +6,6 @@ var morgan = require('morgan');                   // log requests to the console
 var bodyParser = require('body-parser');          // pull information from HTML POST
 var methodOverride = require('method-override');  // simulate DELETE and PUT
 
-// configuration 
-mongoose.connect('mongodb://localhost:27017/tableau');     // connect to mongoDB database
-
 app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                         // log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
@@ -27,10 +24,16 @@ app.all("/api/*", function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
   return next();
 });
-
 // application
 
 app.get('/api/tableau', function(req, res) {
   res.sendFile('public/index.html', { root: __dirname }); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/api/css/style.css', function(req, res) {
+  res.sendFile('public/css/style.css', { root: __dirname });
+});
+app.get('/api/js/app.js', function(req, res) {
+  res.sendFile('public/js/app.js', { root: __dirname });
 });
 
