@@ -26,6 +26,15 @@ app.all("/api/*", function (req, res, next) {
 });
 // application
 
-app.get('/api/poc/', function(req, res) {
+app.get('/api/poc', function(req, res) {
   res.sendFile('public/index.html', { root: __dirname }); // load the single view file (angular will handle the page changes on the front-end)
 });
+
+app.get('/api/css/style.css', function(req, res) {
+  res.sendFile('public/css/style.css', { root: __dirname }); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/api/js/app-js.js', function(req, res) {
+  res.sendFile('public/js/app-js.js', { root: __dirname }); // load the single view file (angular will handle the page changes on the front-end)
+});
+

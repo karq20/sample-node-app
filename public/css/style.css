@@ -1,9 +1,9 @@
-  .container {
+  /* .container {
     display: block;
     width: 400px;
     margin: 100px auto 0;
-  }
-  ul {
+  } */
+  /* ul {
     margin: 0;
     padding: 0;
   }
@@ -16,7 +16,7 @@
   }
   input, button {
     outline: none;
-  }
+  } */
   button {
     background: none;
     border: 0px;
@@ -69,7 +69,7 @@
     color: #0FC57C;
   }
   
-  li {
+  /* li {
     overflow: hidden;
     padding: 20px 0;
     border-bottom: 1px solid #eee;
@@ -107,4 +107,4 @@
   
   ul li.editMode label {
     display:none;
-  }
+  } */
